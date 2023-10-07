@@ -14,10 +14,13 @@ A simple CLI for managing path variables
 - `cd` into the project root directory and run
 
 ```bash
-go install pathfinder.go
+go install ./cmd/pathfinder/
 ```
 
 ## Usage
+
+> **Disclaimer:**
+> As of right now, this tool has been only tested on Linux.
 
 - To list available commands run the following
 

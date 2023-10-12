@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"os"
+	"slices"
 
-    "github.com/wipdev-tech/pathfinder/internal/pf"
+	"github.com/wipdev-tech/pathfinder/internal/pf"
 )
 
 func main() {
@@ -13,8 +15,21 @@ func main() {
 	}
 
 	if os.Args[1] == "list" {
-		sortPaths := len(os.Args) == 3 && os.Args[2] == "--sort"
-		pf.PrintList(sortPaths)
+		listArgs := os.Args[2:]
+		sortPaths := slices.Contains(listArgs, "--sort")
+		searchString := ""
+
+		for i, arg := range listArgs {
+			if arg == "--search" {
+				searchString = listArgs[i+1]
+                break
+			}
+		}
+
+		pf.PrintList(sortPaths, searchString)
 		return
 	}
+
+    fmt.Println("Pathfinder: unknown command")
+    fmt.Println("Run 'pathfinder help' for info")
 }

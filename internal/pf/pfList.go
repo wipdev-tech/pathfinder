@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func PrintList(sort bool) {
+func PrintList(sort bool, searchStr string) {
 	paths := strings.Split(os.Getenv("PATH"), ":")
 
 	if sort {
@@ -15,6 +15,8 @@ func PrintList(sort bool) {
 	}
 
 	for _, p := range paths {
-		fmt.Println(p)
+		if strings.Contains(p, searchStr) {
+			fmt.Println(p)
+		}
 	}
 }

@@ -2,7 +2,7 @@ package pf
 
 import "fmt"
 
-func PfHelp() {
+func PrintHelp() {
 	helpLines := []string{
 		"Pathfinder - A simple CLI for managing path variables",
 		"",

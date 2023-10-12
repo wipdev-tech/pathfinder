@@ -1,4 +1,5 @@
 package pf
+
 import (
 	"fmt"
 	"os"
@@ -6,7 +7,7 @@ import (
 	"strings"
 )
 
-func PfList(sort bool) {
+func PrintList(sort bool) {
 	paths := strings.Split(os.Getenv("PATH"), ":")
 
 	if sort {
